@@ -1,12 +1,8 @@
 const express = require('express')
-const {  buildSchema } = require('graphql')
-const graphqlHTTP = require('express-graphql')
+// const {  buildSchema } = require('graphql')
+const { graphqlHTTP } = require('express-graphql')
 const cors = require('cors')
-const schema = buildSchema(`
-  type Query {
-    language: String
-  }
-`)
+const schema = require('../schema/schema.js')
 const rootValue = {
     language: () => 'GraphQL'
   }
